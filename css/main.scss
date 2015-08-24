@@ -1,7 +1,38 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
 ---
 
 @charset "utf-8";
 
 @import "syntax-highlighting";
+
+.default-styles {
+  font-family: Colfax, arial, sans-serif;
+  font-size: 16px;
+  line-height: (22/16);
+  color: rgb(0, 189, 255);
+
+  a {
+    color: inherit;
+    border-bottom: 2px solid #60b700;
+    text-decoration: none;
+  }
+
+  code {
+    color: black;
+    font-family: Consolas, monospace;
+  }
+
+  p code {
+    position: relative;
+    padding: 0 .2em;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0; right: -.75em; bottom: -1px; left: -.75em;
+      background: #f6f6f6;
+      margin: 0 .75em;
+      z-index: -1;
+    }
+  }
+}

@@ -3,9 +3,18 @@
 <head>
   {% include head.html %}
 </head>
-<body>
-  {{ content }}
-
-  <a href="/">Home</a>
+<body class="default-styles">
+  <header>
+    <h1>WA Notebook.</h1>
+  </header>
+  <main>
+    <article>
+      <time>{{ page.date | date: "%A, %-d %B %Y" }}</time>
+      {{ content }}
+    </article>
+  </main>
+  <footer>
+  </footer>
+  {% include foot.html %}
 </body>
 </html>
