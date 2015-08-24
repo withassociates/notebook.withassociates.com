@@ -10,11 +10,36 @@
   font-size: 16px;
   line-height: (22/16);
   color: rgb(0, 189, 255);
+  margin: 20px;
 
   a {
     color: inherit;
-    border-bottom: 2px solid #60b700;
     text-decoration: none;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      border-bottom: 2px solid #60b700;
+    }
+  }
+
+  blockquote {
+    position: relative;
+    margin: 0 0 0 10px;
+    padding: 0 7px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 2px; left: 0; bottom: 6px;
+      border-left: 2px solid rgb(0, 189, 255);
+    }
+  }
+
+  p + blockquote {
+    margin-top: -15px;
   }
 
   code {
@@ -36,3 +61,8 @@
     }
   }
 }
+
+.article-header__title {
+  margin-top: 0;
+}
+

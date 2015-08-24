@@ -9,7 +9,10 @@
   </header>
   <main>
     <article>
-      <time>{{ page.date | date: "%A, %-d %B %Y" }}</time>
+      <header class="article-header">
+        <time class="article-header__timestamp">{{ page.date | date: "%A, %-d %B %Y" }}</time>
+        <h1 class="article-header__title">{{ page.title }}</h1>
+      </header>
       {{ content }}
     </article>
   </main>
