@@ -25,7 +25,7 @@ title: Notebook Minutes
   Anna is going to DConstruct. She will record her experiences in pen on paper. Someone else will digitise them.
 - **A Piece About OfficeTime**  
   We’re still very early into this. Maybe one for next year.
-- **Medium**
+- **Medium**  
   Not much thought in this really but keep looking for examples.
 
 ## New Ideas
