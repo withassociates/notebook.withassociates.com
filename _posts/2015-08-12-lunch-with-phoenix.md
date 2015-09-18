@@ -3,13 +3,16 @@ layout: post
 title: Lunch with Phoenix
 ---
 
+A couple of Ruby developers talk about [Phoenix][4].
+
+
 **Jamie**:
 
-> So we took a lunch break to play with [Phoenix][4].
+> So we took a lunch break to play around with [Phoenix][4].
 
 **Calum**:
 
-> Yep
+> That, we did.
 
 **Jamie**:
 
@@ -17,31 +20,32 @@ title: Lunch with Phoenix
 
 **Calum**:
 
-> Don’t know, it just seemed interesting. It was very much… it’s like
-> the new hotness innit? So we thought we’d give it a bash.
+> It's an interesting one. It’s very much the new hotness, isn't it?
+> So we thought we’d give it a bash, get a rudimentary grasp of how it works.
 
 **Jamie**:
 
-> So we have this [API which is kind of a bridge to Spotify][0] running
-> on a Mac Mini, and we already built a server for it using [Grape][1]
-> which is like a DSL-thing for [Rack][2]. A bit like [Sinatra][3] but
-> just for generating APIs.
+> In the studio, we have this [API which is kind of a bridge to Spotify][0]
+> running on a Mac Mini. We'd already built a server for it using [Grape][1], a
+> DSL-thing for [Rack][2]. A bit like [Sinatra][3] but purely for generating
+> APIs.
 
-> So we built it with Grape, in Ruby. It wasn’t super slow… but it
+> So our API was written with Grape, in Ruby. It wasn’t super slow… but it
 > wasn’t fast by any means. It did fall over quite a lot.
 
 **Calum**:
 
-> Yep
+> Yeah, there were times when I couldn't change a song fast enough.
 
 **Jamie**:
 
-> So we had a look at Phoenix. So… it was good because we knew
-> exactly the API should look like.
+> So we thought we'd have a look at replicating the API in Phoenix.
+> It seemed like a good place to start because we knew
+> exactly how the API should look.
 
 **Calum**:
 
-> It could be bashed out in an hour.
+> It could potentially be bashed out in an hour.
 
 **Jamie**:
 
@@ -49,7 +53,7 @@ title: Lunch with Phoenix
 
 **Calum**:
 
-> It’s nice.
+> It’s nice. I like it a lot.
 
 **Jamie**:
 
@@ -57,9 +61,9 @@ title: Lunch with Phoenix
 
 **Calum**:
 
-> Installing Phoenix seems pretty painless. What do you need to do:
-> Just get [Elixir][5], [Erlang][6], Phoenix. Yeah, it was pretty
-> painless, good website, pretty in-depth docs.
+> The install process was painless. It's just a case of installing
+> [Elixir][5], [Erlang][6], then Phoenix itself. The website explains it
+> super clearly, and has pretty in-depth documentation.
 
 **Jamie**:
 
@@ -72,12 +76,12 @@ title: Lunch with Phoenix
 **Jamie**:
 
 > It’s like a service for building these sorts of websites. It’s quite
-> neat, maybe we should use it for [Slices][8]. PAUSE. Oh, it’s quite
+> neat, maybe we should use it for [Slices][8]. Oh, it’s quite
 > expensive: $14 a month.
 
 **Calum**:
 
-> That’s alright. It’s better than what we’ve currently got.
+> That’s not too bad!
 
 **Jamie**:
 
@@ -86,11 +90,11 @@ title: Lunch with Phoenix
 
 **Calum**:
 
-> You are.
+> You are. Literally you, Jamie.
 
 **Jamie**:
 
-> So yeah, you have to, what is it, like use [Homebrew][9] to install
+> Darn. So yeah, you can use [Homebrew][9] to install Erlang and
 > Elixir and then… how do you install Phoenix itself?
 
 **Calum**:
@@ -116,41 +120,32 @@ mix archive.install https://github.com/phoenixframework/phoenix/releases/downloa
 > It doesn’t live on a repository like [RubyGems][11]. Although I think
 > there is one for Hex, but you can also point this thing directly at
 > any URL where a Hex archive lives.
-
-**Calum**:
-
-> What version is it on? 0.16. I imagine… they’re looking at 1.0 soon
-> isn’t it, that’s the next one.
-
-**Jamie**:
-
-> So it’s well documented and it’s a lot like [Rails][12] and that’s
+> So Phoenix is well documented, and it’s a lot like [Rails][12] - that’s
 > kind of the key to its burgeoning popularity.
 
 **Calum**:
 
-> And it’s fast and you can deploy to Heroku. Is that right?
+> The first big Rails-esque framework. Plus it’s fast and you can deploy
+> straight to Heroku.
 
 **Jamie**:
 
-> Yeah, you can deploy to Heroku. So you do… the command line is just
-> like Rails…
+> Yep. Phoenix has a command line interface just like Rails…
 
 **Calum**:
 
-> Yeah, good generators.
+> Simple generators.
 
 **Jamie**:
 
-> Yeah, so you do
+> To make a new project:
 
 ```sh
 mix phoenix.new dj54b_api_phoenix
 ```
 
-> and that’s making a new Phoenix project, and you have to remember to
-> remember to tell it not to include [Brunch][13] because we’re building
-> an API and we don’t want all that JavaScript
+> In our case, we tell it not to include [Brunch][13] because we’re building
+> an API and don’t want all the included Javascript.
 
 ```sh
 mix phoenix.new dj54b_api_phoenix --no-brunch
@@ -158,33 +153,23 @@ mix phoenix.new dj54b_api_phoenix --no-brunch
 
 **Calum**:
 
-> Right yeah, that’s the asset pipeline isn’t it, or sort of asset
-> manager.
+> I guess Brunch is the Phoenix solution to the Rails asset pipeline.
 
 **Jamie**:
 
-> And then we ran it and it had that familiar like static “hello” page
+> Running the generated app has that familiar static “hello” page.
 
 **Calum**:
 
-> Yeah, “Welcome to Phoenix”
+> “Welcome to Phoenix, babes.”
 
 **Jamie**:
 
-> And then, like, what’s it called, [Better Errors][14], is that built
-> into it?
+> And then [Better Errors][14], is a version of that built into it?
 
 **Calum**:
 
 > Yeah, and it live reloads as well.
-
-**Jamie**:
-
-> Oh yeah, live reload.
-
-**Calum**:
-
-> That’s amazing.
 
 **Jamie**:
 
@@ -196,12 +181,12 @@ mix phoenix.new dj54b_api_phoenix --no-brunch
 
 **Jamie**:
 
-> So straight off the bat it feels just like Rails, except… refined
-> like taking all the stuff the community’s learned in Rails and
-> adding the little bits of finesse.
+> So straight off the bat it feels just like Rails, except… it takes
+> all the stuff the community’s learned in Rails and adds the little bits of
+> finesse.
 
-> And then, I felt like it took us a little while to figure out how
-> to render something *other* than HTML.
+> I felt like it took us a little while to figure out how to render something
+> *other* than HTML.
 
 **Calum**:
 
@@ -209,9 +194,9 @@ mix phoenix.new dj54b_api_phoenix --no-brunch
 
 **Jamie**:
 
-> So looking at the controller, well I suppose something interesting
-> as well is that it’s uh… the directory that contains your… what
-> would be called app in rails is called *web* in Phoenix.
+> So looking at the controller, something interesting is that the directory
+> that contains what would be called your 'app' in rails is called *web*
+> in Phoenix.
 
 ```
 .
@@ -223,16 +208,16 @@ mix phoenix.new dj54b_api_phoenix --no-brunch
 └── web
 ```
 
-> …on the basis that your app might have other parts?
+> …on the basis that your app may have other parts?
 
 **Calum**:
 
-> And that’s the only folder we touched in the whole project.
+> And that’s the only folder we touched.
 
 **Jamie**:
 
-> Yeah, so app, sorry *web*, it’s got a router, it looks just like
-> Rails, it’s got controller, they look just like Rails.
+> App, sorry *web*, it’s got a router, it looks just like
+> a Rails router. It’s got controllers, they look just like Rails controllers.
 
 ```
 .
@@ -266,46 +251,36 @@ mix phoenix.new dj54b_api_phoenix --no-brunch
 
 **Calum**:
 
-> It’s got… a lot less stuff is inferred. It’s not got that Rails-esque
-> sort of… opinionated feel.
+> It removes a lot of Rails' opinionated feel. A lot of what Rails assumes
+> about your app is not here.
 
 **Jamie**:
 
-> Fewer magic strings is I think how I’d put that.
+> Fewer magic strings is how I’d put that.
+> In Rails, it’s like "here’s a magic string and we will magically
+> pluralise it for you", and here it’s like "I’m going to give you the literal
+> module constant to use and a symbol and the action to use on that module."
 
 **Calum**:
 
-> Yeah. You can put that I said that.
+> Yup. A bit less hand-holdy.
 
 **Jamie**:
 
-> In Rails, it’d be like here’s a magic string and we will magically
-> pluralise it for you and all that stuff and here it’s like I’m going
-> to give you the literal module constant to use and a symbol and the
-> action to use on that module.
+> Sometimes you do end up on a yak shave with Rails’ magic.
+
+> Phoenix has controllers with actions that, by default, render a template -
+> plus like Rails does - but they come with a view module as well. I think
+> you put your helpers in there.
 
 **Calum**:
 
-> Yup
+> Right, we didn’t touch on views at all. No need to with just an API.
 
 **Jamie**:
 
-> Which is… sometimes you do end up on a yak shave with Rails’ magic.
-
-> Yeah, you’ve got controllers and they’ve got actions and by default
-> they will render a template just like Rails does and they come with
-> a view… module? as well. So you… I think you put your helpers in
-> there, I get the impression that’s how it works.
-
-**Calum**:
-
-> Right yeah, we didn’t touch on views at all.
-
-**Jamie**:
-
-> No. But to render JSON out, you just need to use the `json`
-> method which comes as part of the err… Phoenix controller
-> sort of base module.
+> No. But to render JSON out, you just use the `json` method which comes
+> as part of the Phoenix controller base module.
 
 ```elixir
 def info(conn, _params) do
@@ -318,34 +293,33 @@ end
 
 **Calum**:
 
-> The connection itself
+> The connection itself…
 
 **Jamie**:
 
-> And the params object, which we never actually touched.
+> …And the params object, which we never actually touched.
 
 **Calum**:
 
-> No
+> No.
 
 **Jamie**:
 
-> And then you… you can’t mutate the connection because it’s erlang
-> and you can’t mutate objects so you create a *new* connection and
-> you return that from the action.
+> You can’t mutate the connection because it’s Erlang, which doesn't allow
+> you to mutate objects. So you create a *new* connection and return that
+> from the action.
 
 **Calum**:
 
-> So you sort of… what’s that weird Erlang mutation operator? Is that
-> what that is?
+> What’s that weird Erlang operator? `|>`?
 
 **Jamie**:
 
-> Ah no that’s the pipeline thing. Yeah so whereas in Rails you receive
-> a request, set a load of instance variables and then, like, something
-> happens afterwards but you don’t return anything from the action,
-> in Phoenix you receive the connection, you produce a *new* connection
-> with the changes you want and you return it.
+> Ah, the pipeline thing. In Rails, you receive a request, set a
+> load of instance variables and then something happens afterwards but you
+> don’t return anything from the action. In Phoenix, you receive the
+> connection, but produce a *new* connection with the changes you want
+> and return it.
 
 **Calum**:
 
@@ -353,12 +327,9 @@ end
 
 **Jamie**:
 
-> So when do `json` that, like, copies the connection, produces a new
+> So the `json` method will copy the connection and produce a new
 > connection with the `Content-Type: application/json` header set on
-> it and the body set to whatever data you pass into it, serialised
-> I assume. Or maybe it’s actually that it will… maybe it’s just like
-> setting up a load of config for whatever happens which actually goes
-> “okay, now I’m going to construct the response”
+> it and the body set to whatever data you pass into it.
 
 **Calum**:
 
@@ -366,28 +337,23 @@ end
 
 **Jamie**:
 
-> But that’s like… I think it’s quite nice that there’s nothing outside
-> of this function. Like, this is all that comes in and what you return
-> is all there is. It’s a bit like… what’s that book? [Thinking Fast
-> and Slow][15]. One of the things in that book is “What You See is
-> All There Is”, referring to one of the theories in that but here
-> it’s like, the arguments you receive and the thing you return,
-> that’s all you need to know about. There’s nothing coming from
-> anywhere else apart from the methods, sorry functions, available
-> to the module.
+> I think it’s quite nice that there’s nothing outside of this function.
+> It’s a bit like… what’s that book? [Thinking Fast and Slow][15]. One of
+> the things in that book is “What You See is All There Is”, referring to
+> one of the theories in that but here, the arguments you receive and what
+> you return - that’s all you need to know about. There’s nothing coming from
+> anywhere else apart from the functions, available to the module.
 
-> I think we struggled to find that `json` function but looking at
-> it now.
+> I think we struggled to find that `json` function, initially.
 
 **Calum**:
 
-> It seems fairly self explanatory.
+> It seems fairly self explanatory. Perhaps it seemed too easy.
 
 **Jamie**:
 
-> Yeah, it’s just a matter of finding it in the docs. It lives in
-> [Phoenix.Controller][16] the module. So if you look in there you
-> know everything you can do, so that’s pretty cool.
+> Yeah, it’s just a matter of finding it in the docs. It lives in the
+> [Phoenix.Controller][16] module.
 
 > So, what did you think of the pipeline operators then?
 > These things: `|>`
@@ -401,17 +367,16 @@ conn
 
 **Calum**:
 
-> It’s quite nice, I like the syntax. It’s sort of like… I don’t know,
-> it almost forces you to keep things very simple.
+> I like that syntax. It forces you to keep things clear.
 
 **Jamie**:
 
 > Yeah. It’s almost exactly like the [Shell `|` operator][17]
-> except that rather than it directing standard in somewhere
-> it takes the result of the expression on the left and puts
-> it as the first argument to that expression on the right.
+> but rather than it directing data somewhere, it takes the result of the
+> expression on the left and uses it as the first argument to the
+> expression on the right.
 
-> So `conn` is going to the first argument to `halt`…
+> So `conn` is going to be the first argument to `halt`…
 
 ```elixir
 conn
@@ -438,10 +403,10 @@ conn
 ```
 
 > It’s a good way to break up what would be a big long nested
-> method, sorry, function invocation.
+> function invocation.
 
 > There’s only really one bit of the funky destructuring assignment
-> (pattern matching) we used in this and that’s here:
+> (pattern matching) we used and that’s here:
 
 ```elixir
 case File.stat(peacefile_path) do
@@ -454,14 +419,13 @@ end
 
 > It’s a switch or a case statement. There are no statements in
 > this language but it’s a case expression. `File.stat...` gets
-> fed into it and what’s cool is that you can both match the result
-> and pull out variables at the same time.
+> fed into it and you can both match the result and pull out variables
+> simultaneously.
 
-> So the thing `File.stat` will return will be a tuple and if the
-> first item in the tuple is the symbol `:ok` then it’ll pull out
-> `stat` for you. Apparently in Erlang that’s like, an old and
-> deeply optimised part of the language. So apparently it’s super
-> fast to do it that way, so it’s always preferable.
+> So the thing `File.stat` will return will be a tuple. If the
+> first item in the tuple is the symbol `:ok`, it’ll pull out
+> `stat` for you. In Erlang that’s an old and deeply optimised part of the
+> language - it’s super fast to do it that way, so it’s always preferable.
 
 **Calum**:
 
@@ -471,25 +435,24 @@ end
 
 > Yeah, an ignored variable.
 
-> It genuinely did come together over a lunch time.
+> The project genuinely came together over a lunch time.
 
 **Calum**:
 
-> Yeah.
+> Yeah, start to finish.
 
 **Jamie**:
 
-> Got it running on the machine. And, I think it’s more dependable
-> than the Ruby version. Cos the Ruby version would, if when it was
-> talking to Spotify over AppleScript, if Spotify stopped talking to
-> it, that would chew up a process, we’d run out of processes and the
-> whole thing would just stop working, and hang.
+> We even got it running on the machine. I think it’s more dependable
+> than the Ruby version. Talking to Spotify over AppleScript, if Spotify
+> stopped talking to it, that would chew up a process, we’d run out of
+> processes and the whole thing would just stop working.
 > And that’s not really a knock against Ruby or Rack or Grape, it’s
 > just that…
 
 **Calum**:
 
-> There are more suitable languages for that sort of thing…
+> There are more suitable languages for that sort of thing.
 
 **Jamie**:
 
@@ -499,68 +462,52 @@ end
 
 **Calum**:
 
-> Fast as you like that, innit?
-
-**Jamie**:
-
-> It’s freaky fast.
-
-**Calum**:
-
 > I’d be interested in seeing the sort of things that people are making
-> with the web. Like if there’s any, like, high traffic sites using it
+> with Phoenix. If there’s any high traffic sites using it
 > already or…
 
 **Jamie**:
 
-> Yeah, well I mean WhatsApp is built on Erlang, but not Elixir. But then,
-> the idea with Elixir, because Elixir compiles to Erlang (or [BEAM][18],
-> the Erlang virtual machine) bytecode there should be no slowdown.
-> There’s no interpretation step, it’s all compiled code.
+> WhatsApp is built on Erlang, but not Elixir. But then, the idea with Elixir,
+> because Elixir compiles to Erlang (or [BEAM][18], the Erlang virtual
+> machine) bytecode there should be no slowdown. There’s no interpretation
+> step, it’s all compiled code.
 
-> So [Rik Lomas][19] is building [SuperHi][20] using Phoenix, swapping
-> out Rails for Phoenix and getting good results there. I’m not sure
+> [Rik Lomas][19] is building [SuperHi][20] using Phoenix, swapping
+> over from Rails to Phoenix and getting good results there. I’m not sure
 > what else there really is to say about it apart from that it’s clearly
 > been designed to look friendly to Rails developers, to feel familiar.
 
 **Calum**:
 
-> Which is a good idea, because it’s about time there was an alternative
-> really.
+> Which I reckon is a good idea. Rails made full-stack web development a lot
+> more accessible to newcomers, but it's been a little lonely at the top
+> there.
 
 **Jamie**:
 
-> Yeah, I mean there’s always been like [Django][21] and stuff like that
-> and like the PHP space has Laravel and stuff like that, but none of
+> There’s always been [Django][21], and PHP has Laravel, but none of
 > those really solve this massive concurrency issue and stay friendly,
 > whereas this is quite a promising way to do that.
 
 **Calum**:
 
-> I need to dive deep into it, we didn’t touch the model stuff,
-> [Ecto][22].
+> I'm looking forward to having a deeper dive into it. We didn’t even touch
+> the model stuff, [Ecto][22].
 
 **Jamie**:
 
-> Didn’t write any tests…
+> We didn’t write any tests…
 
 **Calum**:
 
-> No we did, we wrote loads of tests. More tests than software ;)
+> This is going on the internet, Jamie. We could be killed for saying that.
 
 **Jamie**:
 
 > I got a bit confused by the config, setting up the port for the
 > production environment, but I got into the IRC channel and got
-> an answer from the author within about five minutes.
-
-**Calum**:
-
-> Oh cool.
-
-**Jamie**:
-
-> It was wicked.
+> an answer from Phoenix's author within five minutes.
 
 **Calum**:
 
@@ -569,10 +516,10 @@ end
 **Jamie**:
 
 > Yeah, I was being an idiot. I was just misunderstanding how the thing
-> worked. It was cos the config, it’s got exactly the same config
-> layout as Rails where it’s kind of a base config and then additive
-> config for each subsequent environment. So you load config first
-> and then dev, or prod, or test.
+> worked. It was because the config has exactly the same config
+> layout as Rails, where it has a base config and then specific
+> configs for each environment. So you load config first
+> and then development, or production, or test.
 
 > I guess it’s also interesting that it’s got the equivalent of a
 > Gemfile in `mix.exs`.
@@ -601,8 +548,8 @@ end
 
 **Jamie**:
 
-> On a function definition, yeah, a few times. But that’s actually
-> more consistent than Ruby because you always need `do`.
+> On a function definition, yeah, a few times. But that’s more
+> consistent than Ruby because you always need `do`.
 
 **Calum**:
 
